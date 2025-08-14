@@ -61,7 +61,12 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Cricket-themed custom colors
+				'cricket-gold': 'hsl(var(--cricket-gold))',
+				'cricket-dark': 'hsl(var(--cricket-dark))',
+				'cricket-ball': 'hsl(var(--cricket-ball))',
+				'cricket-field': 'hsl(var(--cricket-field))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

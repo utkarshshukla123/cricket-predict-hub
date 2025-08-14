@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-cricket",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -18,6 +18,11 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Cricket-themed variants
+        hero: "bg-gradient-hero text-white hover:shadow-glow hover:scale-105 transform transition-all duration-300 border-0 font-semibold animate-glow",
+        cricket: "bg-cricket-field text-white hover:bg-cricket-ball shadow-cricket hover:shadow-glow transition-all duration-300",
+        gold: "bg-cricket-gold text-cricket-dark hover:bg-cricket-gold/90 shadow-card font-semibold",
+        news: "bg-gradient-news text-white hover:opacity-90 transition-opacity"
       },
       size: {
         default: "h-10 px-4 py-2",
