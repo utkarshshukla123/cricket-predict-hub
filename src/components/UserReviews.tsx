@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Star, ThumbsUp, MessageSquare, Award } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const UserReviews = () => {
   const reviews = [
@@ -149,13 +150,18 @@ const UserReviews = () => {
           ))}
         </div>
         
-        <div className="text-center">
-          <Button variant="hero" size="lg" className="mr-4">
-            Write a Review
-          </Button>
-          <Button variant="outline" size="lg">
-            View All Reviews
-          </Button>
+        <div className="text-center space-x-4">
+          <Link to="/reviews">
+            <Button variant="hero" size="lg" className="hover-scale">
+              <MessageSquare className="mr-2 h-4 w-4" />
+              Write a Review
+            </Button>
+          </Link>
+          <Link to="/reviews">
+            <Button variant="outline" size="lg" className="hover-scale">
+              View All Reviews
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

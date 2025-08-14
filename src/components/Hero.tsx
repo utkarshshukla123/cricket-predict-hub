@@ -1,8 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, TrendingUp, BarChart3, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 import cricketHero from "@/assets/cricket-hero.jpg";
+import Chatbot from "./Chatbot";
 
 const Hero = () => {
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
@@ -35,25 +40,33 @@ const Hero = () => {
         
         {/* Action Buttons */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in">
-          <Button variant="hero" size="lg" className="h-16 text-lg">
-            <TrendingUp className="mr-2" />
-            Match Predictions
-          </Button>
+          <Link to="/match-predictions">
+            <Button variant="hero" size="lg" className="h-16 text-lg w-full hover-scale">
+              <TrendingUp className="mr-2" />
+              Match Predictions
+            </Button>
+          </Link>
           
-          <Button variant="cricket" size="lg" className="h-16 text-lg">
-            <BarChart3 className="mr-2" />
-            Live Analysis
-          </Button>
+          <Link to="/live-analysis">
+            <Button variant="cricket" size="lg" className="h-16 text-lg w-full hover-scale">
+              <BarChart3 className="mr-2" />
+              Live Analysis
+            </Button>
+          </Link>
           
-          <Button variant="gold" size="lg" className="h-16 text-lg">
-            <Users className="mr-2" />
-            Player Stats
-          </Button>
+          <Link to="/player-stats">
+            <Button variant="gold" size="lg" className="h-16 text-lg w-full hover-scale">
+              <Users className="mr-2" />
+              Player Stats
+            </Button>
+          </Link>
           
-          <Button variant="hero" size="lg" className="h-16 text-lg">
-            <MessageCircle className="mr-2" />
-            Expert Tips
-          </Button>
+          <Link to="/expert-tips">
+            <Button variant="hero" size="lg" className="h-16 text-lg w-full hover-scale">
+              <MessageCircle className="mr-2" />
+              Expert Tips
+            </Button>
+          </Link>
         </div>
         
         {/* Stats */}
@@ -75,10 +88,18 @@ const Hero = () => {
       
       {/* Chatbot Button */}
       <div className="fixed bottom-8 right-8 z-50">
-        <Button variant="hero" size="icon" className="w-16 h-16 rounded-full animate-float">
+        <Button 
+          variant="hero" 
+          size="icon" 
+          className="w-16 h-16 rounded-full animate-float hover-scale"
+          onClick={() => setIsChatbotOpen(!isChatbotOpen)}
+        >
           <MessageCircle size={24} />
         </Button>
       </div>
+
+      {/* Chatbot Component */}
+      <Chatbot isOpen={isChatbotOpen} onClose={() => setIsChatbotOpen(false)} />
     </section>
   );
 };
